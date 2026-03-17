@@ -1,3 +1,6 @@
+# files
+bin-int
+
 # Python version management
 .python-version
 
