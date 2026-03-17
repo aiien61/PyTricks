@@ -1,5 +1,8 @@
 # files
 bin-int
+dump.json
+result.tsv
+sample.csv
 
 # Python version management
 .python-version
