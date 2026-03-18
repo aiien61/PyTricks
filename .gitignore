@@ -3,6 +3,7 @@ bin-int
 dump.json
 result.tsv
 sample.csv
+*.log
 
 # Python version management
 .python-version
