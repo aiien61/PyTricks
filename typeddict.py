@@ -1,4 +1,4 @@
-from typing import TypedDict, NotRequired
+from typing import TypedDict, NotRequired, Required
 
 class Order(TypedDict):
    order_id: str
@@ -11,10 +11,12 @@ Product = TypedDict(
    {
       "product_id": str,
       "quantity": int,
-      "jobs": NotRequired[list[str]]
-   }
+      "operations": NotRequired[list[str]]
+   },
+   total=False
 )
 
+Machine = TypedDict('Machine', {'capacity': int, 'type': Required[str]}, total=True)
 
 def main():
    order: Order = {
@@ -26,9 +28,15 @@ def main():
    product: Product = {
       'product_id': 'p001',
       'quantity': 100,
-      'jobs': ['j001', 'j002']
+      'operations': ['op1', 'op2']
    }
    print(product)
+
+   machine: Machine = {
+      'capacity': 1000,
+      'type': 'etch'
+   }
+   print(machine)
 
 if __name__ == "__main__":
    main()
